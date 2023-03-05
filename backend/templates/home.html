@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_links %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock css_links %}
+
+{% block home_active %}
+    active
+{% endblock home_active %}
+
+{% block page_title %}
+    OGDS
+{% endblock page_title %}
+
+{% block content %}
+<section class="headline">
+    <h1>Gujarat Government Services</h1>
+</section>
+
+<section class="features">
+    <div class="feature-container">
+        <a href={% url 'required-income-docs' %}> <img src="{% static 'Images/pic1.png' %}" alt="Income Certificate"></a>
+        <h2>Income Certificate</h2>
+        <p>Income certificate is an essential document for obtaining various government subsidies and schemes.
+        </p>
+    </div>
+    <div class="feature-container">
+        <a href="{% url 'required-ncl-docs' %}"> <img src="{% static 'Images/pic2.jpg' %}"></a>
+        <h2>Non-Creamy Layer Certificate</h2>
+        <p>Non-Creamy Layer Certificate is issued to the Other Backward Class (OBC) category candidates by the
+            respective state authorities.</p>
+        </div>
+    </section>
+</div>
+{% endblock content %}

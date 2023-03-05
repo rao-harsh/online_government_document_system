@@ -1,0 +1,7 @@
+register
+login
+income certificate submit
+NCL submit
+pdf generation
+my profile
+income and NCL certificate generate

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css_links %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}"></link>
+{% endblock css_links %}
+
+{% load static %}
+{% block page_title %}
+    Login
+{% endblock page_title %}
+
+{% block login_active %}
+    active
+{% endblock login_active %}
+
+{% block content %}
+<section class="headline">
+    <h1>Good to see you again !</h1>
+</section>
+<!-- login page content  -->
+<form method="post" action="/login/">
+    {% csrf_token %}
+    <input type="hidden" name="next" value="{{ next }}">
+    <h3 id="logo">Log In</h3>
+    
+    <label for="username">Email</label>
+    <input type="text" id="username" name="username" placeholder="Type in your email.." autocomplete="off" required />
+    
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" placeholder="Enter your password.." autocomplete="off" required />
+    
+    <a class="forgot" href="#">Forgot Password?</a>
+    <a class="register" href="{% url 'register' %}">Register</a>
+    <input type="submit" name="submit" value="Log In" />
+</form>
+{% if error_message  %}
+    <p style="color:black">{{error_message}}</p>
+{% endif %}
+{% endblock content %}

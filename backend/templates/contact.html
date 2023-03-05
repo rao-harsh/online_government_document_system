@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_title %}
+    Contact Us
+{% endblock page_title %}
+
+{% block contact_active %}
+    active
+{% endblock contact_active %}
+
+{% block css_links %}
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock css_links %}
+
+{% block content %}
+<section class="headline">
+    <h1>Contact Us</h1>
+        </section>
+        <form>
+            <b> <p style="text-align: left; color: #000; font-size: 25px; font-weight: 100; text-align: center;">Online Government Document System(Help Desk)</p><br></b>
+            <div>
+                <i class="fa fa-phone">1 8 0 0 2 3 3 5 5 0 0</i>
+            </div>
+            <br/>
+            <div>
+                <i class="fa fa-envelope"><a href="mailto:support@company.com"> support@company.com</a></i>
+            </div>
+        </ul>
+    </form>
+</section>
+{% endblock content %}

@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_title %}
+    Required Documents
+{% endblock page_title %}
+
+{% block css_links %}
+    <link rel="stylesheet" href="{% static 'css/required_docs_income.css' %}">
+{% endblock css_links %}
+
+{% block content %}
+
+<section class="headline">
+    <h1>Required Documents For Income Certificate</h1>
+</section>
+
+
+        <div class="myPanel" style="margin-top: 40px; margin-left: 20px; margin-right:20px;" >
+            <div class="heading">Instruction</div>
+            <div class="body" style="background-color: lightsteelblue;">
+                <ul>
+                  <li><strong>This Service is available in English Only.</strong></li><br>
+                  
+                </ul>
+                <ul>
+                    <li><strong>You will be required to click on "Apply Online” button for filling the form online.</strong></li><br>
+                    
+                </ul>
+                
+                <ul>
+                    <li><strong>Applicant should ready with service specific information like: Occupational Details, Family details, other than basic applicant details before moving with submitting application online.</strong></li> <br>
+                    
+                  </ul>
+                  
+                  <ul>
+                      <li><strong>All fields are mandatory fields in Online Application.</strong></li><br>
+                      
+                    </ul>
+                    
+                    <ul>
+                        <li><strong>In case of any wrong/misleading information provided in application shall lead to rejection of the application by Department Authorities</strong></li><br>
+                        
+                    </ul>
+                    <ul>
+                        <li><strong>Applicant will be responsible for entering any incorrect information.</strong></li><br>
+                        
+                    </ul>
+                    <ul>
+                        <li style="color: red;"> <strong>Note:You Need to Attach The Following Documents While Applying for a service and Passport size photo.</strong></li>
+                    </ul>  
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <div class="myPanel" style="margin-top: 20px; margin-left: 20px; margin-right:20px;">
+            <div class="heading">Residence Proof Attachment</div>
+            <div class="body" style="background-color: lightsteelblue;">
+                
+      
+                  <ul>
+                      <li><strong>True Copy of Electricity Bill.</strong></li>
+                      
+                    </ul>
+                    
+            </div>
+        </div>
+    </div>
+    <div class="myPanel" style="margin-top: 20px;  margin-left: 20px; margin-right:20px;">
+        <div class="heading">Identity Proof Attachment</div>
+        <div class="body" style="background-color: lightsteelblue;">
+            
+            
+            <ul>
+                <li><strong>True Copy of Election Card.</strong></li>
+                
+            </ul>
+            
+        </div>
+    </div>
+</div>
+<div class="myPanel" style="margin-top: 20px;  margin-left: 20px; margin-right:20px; ;" >
+    <div class="heading"> Proof Needed In Service Attachment</div>
+    <div class="body" style="background-color: lightsteelblue;">
+        
+        
+        <ul>
+            <li><strong>Ration Card.</strong></li>
+            
+        </ul>
+        
+    </div>
+</div>
+</div>
+
+<!-- <button class="button1" type="submit" >Apply Online</button> -->
+<!-- <button class="button1" type="submit" onclick="replaceFunction()">
+    Apply Online
+</button> -->
+<a href="{% url 'income-certificate' %}">
+    <button class="button1" type="submit">Apply Online</button>  
+</a>
+
+{% endblock content %}

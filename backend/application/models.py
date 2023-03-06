@@ -131,6 +131,7 @@ class Income(models.Model):
         max_length=50,    null=False, blank=False)
     Self_Declaration_Certificate_Image = models.ImageField(
         upload_to=get_upload_path)
+    user = models.ForeignKey(CustomUser,on_delete=models.CASCADE)
 
     def __str__(self) -> str:
         return f"{self.id}-{self.Applicant_Name}"
@@ -191,6 +192,7 @@ class Non_Creamy_Layer(models.Model):
     Date_Of_Application = models.CharField(
         max_length=50,   null=False, blank=False)
     Self_Declaration_Image = models.ImageField(upload_to=get_upload_path)
+    user = models.ForeignKey(CustomUser,on_delete=models.CASCADE)
 
     def __str__(self) -> str:
         return f"{self.id}-{self.Applicant_Name}"

@@ -17,8 +17,9 @@
 <!-- form -->
 
 <!-- contents -->
-<form method="POST" action="Non_Creamy_Layer" enctype="multipart/form-data">
+<form method="POST" action="{% url 'non-creamy-layer' %}" enctype="multipart/form-data">
     {% csrf_token %}
+    <input type="hidden" name="user" value={{user.pk}}>
     <h1 class="head" style="color: black;">Non Creamy Layer Certificate</h1>
     <ul class="flex-outer">
                 <li>

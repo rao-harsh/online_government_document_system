@@ -2,8 +2,9 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.contrib.auth import login,authenticate,logout
 from django.contrib.auth.decorators import login_required
-from .forms import LoginForm
+from .forms import LoginForm,IncomeForm,NonCreamyLayerForm
 from . import models
+
 
 # Create your views here.
 def register(request):
@@ -35,6 +36,7 @@ def login_view(request):
             user = authenticate(username=username,password=password)
             if user is not None:
                 login(request,user)
+                print(request.user.pk)
                 if next_page != "None" and next_page != "" and next_page is not None:
                     return redirect(next_page)
                 else:
@@ -61,12 +63,32 @@ def required_ncl_docs(request):
 
 @login_required
 def income_certificate(request):
+    if request.method == "POST":
+        form = IncomeForm(request.POST,request.FILES)
+        form.data.user = models.CustomUser.objects.get(pk=request.user.pk)
+        if form.is_valid():
+            form.save()
+            return redirect("income-certificate-form")
+        else:
+            print(form.errors)
     return render(request,"income_certificate.html")
 
 @login_required
 def non_creamy_layer(request):
+    if request.method == "POST":
+        form = NonCreamyLayerForm(request.POST,request.FILES)
+        # form.data.user = models.CustomUser.objects.get(pk=request.user.pk)
+        if form.is_Valid():
+            form.save()
+            return redirect("non-creamy-layer-form")
+        else:
+            print(form.errors)
     return render(request,"non_creamy_layer.html")
 
 @login_required
-def non_creamy_layer_form(request):
+def print_non_creamy_layer(request):
+    return render(request,"printing_data.html")
+
+@login_required
+def print_income(request):
     return render(request,"printing_data.html")

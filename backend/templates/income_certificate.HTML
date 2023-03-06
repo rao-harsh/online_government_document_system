@@ -18,7 +18,7 @@
 <!-- form -->
 
          <!-- contents -->
-    <form method="POST" action="Income_Certificate" enctype="multipart/form-data">
+    <form method="POST" action="{% url 'income-certificate' %}" enctype="multipart/form-data">
         
         {% if success_message %}
         <p style="color:black">{{success_message}}</p>
@@ -27,7 +27,7 @@
         {{error_message}}
         {% endif %}
         {% csrf_token %}
-        
+        <input type="hidden" name="user" value="{{user.pk}}">
         <ul class="flex-outer">
             <!-- <h1 style="color: black;">Income Certificate</h1>-->
             

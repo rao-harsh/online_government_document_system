@@ -2,3 +2,4 @@ __pycache__/
 frontend/
 venv/
 media/
+db.sqlite3

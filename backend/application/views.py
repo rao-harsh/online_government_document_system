@@ -34,13 +34,17 @@ def login_view(request):
             next_page = form.data["next"]
             
             user = authenticate(username=username,password=password)
+            print(user.role)
             if user is not None:
                 login(request,user)
                 print(request.user.pk)
-                if next_page != "None" and next_page != "" and next_page is not None:
-                    return redirect(next_page)
+                if request.user.role == "admin":
+                    return redirect("government-officer-panel")
                 else:
-                    return redirect("home")
+                    if next_page != "None" and next_page != "" and next_page is not None:
+                        return redirect(next_page)
+                    else:
+                        return redirect("home")
             else:
                 return render(request,"login.html",{"error_message":"Invalid Username or password"})
         else:
@@ -65,30 +69,40 @@ def required_ncl_docs(request):
 def income_certificate(request):
     if request.method == "POST":
         form = IncomeForm(request.POST,request.FILES)
-        form.data.user = models.CustomUser.objects.get(pk=request.user.pk)
         if form.is_valid():
             form.save()
-            return redirect("income-certificate-form")
+            return redirect("/income-certificate-form/?id={0}".format(request.user.pk))
         else:
             print(form.errors)
+            return render(request,"income_certificate.html",{"error_message":form.errors})
     return render(request,"income_certificate.html")
 
 @login_required
 def non_creamy_layer(request):
     if request.method == "POST":
         form = NonCreamyLayerForm(request.POST,request.FILES)
-        # form.data.user = models.CustomUser.objects.get(pk=request.user.pk)
         if form.is_Valid():
             form.save()
-            return redirect("non-creamy-layer-form")
+            return redirect("non-creamy-layer-form/?id={0}".format(request.user.pk))
         else:
             print(form.errors)
     return render(request,"non_creamy_layer.html")
 
 @login_required
 def print_non_creamy_layer(request):
+    print(request.GET['id'])
     return render(request,"printing_data.html")
 
 @login_required
 def print_income(request):
-    return render(request,"printing_data.html")
+    print(request.GET['id'])
+    income_form = models.Income.objects.get(user=request.GET["id"])
+    print(income_form)
+    return render(request,"printing_data.html",{"income_form":income_form})
+
+@login_required
+def government_officer_panel(request):
+    if request.user.role == "admin":
+        return render(request,"government-officer-panel.html")
+    else:
+        return render(request,"login.html",{"error_message":"You're very chalak bro but i'm your fuckin' daddy sucker"})

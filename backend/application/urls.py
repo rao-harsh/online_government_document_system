@@ -14,6 +14,7 @@ urlpatterns = [
     path("non-creamy-layer/",views.non_creamy_layer,name="non-creamy-layer"),
     path("income-certificate-form/",views.print_income,name="income-certificate-form"),
     path("non-creamy-layer-form/",views.print_non_creamy_layer,name="non-creamy-layer-form"),
+    path("government-officer-panel/",views.government_officer_panel,name="government-officer-panel")
     # path("my-profile/",views.my_profile,name="my-profile"),
     # path("income-certificate-data/",views.income_certificate_data,name="income-certificate-data"),
     # path("non-creamy-layer-data/",views.non_creamy_layer_data,name="non_creamy_layer_data"),

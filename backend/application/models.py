@@ -29,6 +29,7 @@ class CustomUserManager(BaseUserManager):
     def create_superuser(self, email, password, **extra_fields):
         extra_fields.setdefault("is_staff", True)
         extra_fields.setdefault("is_superuser", True)
+        extra_fields.setdefault("role","admin")
         return self.create_user(email, password, **extra_fields)
 
 
@@ -39,6 +40,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     contact = models.CharField(max_length=10)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
+    role = models.CharField(max_length=10,default="user")
 
     objects = CustomUserManager()
 
@@ -131,7 +133,7 @@ class Income(models.Model):
         max_length=50,    null=False, blank=False)
     Self_Declaration_Certificate_Image = models.ImageField(
         upload_to=get_upload_path)
-    user = models.ForeignKey(CustomUser,on_delete=models.CASCADE)
+    user = models.OneToOneField(CustomUser,on_delete=models.CASCADE)
 
     def __str__(self) -> str:
         return f"{self.id}-{self.Applicant_Name}"
@@ -192,7 +194,7 @@ class Non_Creamy_Layer(models.Model):
     Date_Of_Application = models.CharField(
         max_length=50,   null=False, blank=False)
     Self_Declaration_Image = models.ImageField(upload_to=get_upload_path)
-    user = models.ForeignKey(CustomUser,on_delete=models.CASCADE)
+    user = models.OneToOneField(to=CustomUser,on_delete=models.CASCADE)
 
     def __str__(self) -> str:
         return f"{self.id}-{self.Applicant_Name}"

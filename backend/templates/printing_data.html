@@ -1,222 +1,232 @@
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Non Creamy Layer Certificate</title>
-    <link rel="stylesheet" href="{% static 'Css/Printing_Data.css' %}"/>
-       <!-- Fontawesome CDN Link -->
-       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="{% static 'css/printing_data.css' %}">
+    <title>Print Your Application</title>
 </head>
-<body>
-         <section class="headline"> 
-            <h1>Non Creamy Layer</h1> 
-         </section> 
 
-        <!-- form -->
+<section class="headline">
+  <h1>Income Certificate</h1>
+</section>
 
-         <!-- contents -->
-         <form>
-            <a href="javascript:window.print()">Print Application</a>
-            <h1 class="head" style="color: black;">Non Creamy Layer Certificate</h1>
-            <ul class="flex-outer">
-                <li>
-                    <label for="applicantsname">Applicant_Name</label>
-                    <p>{{data.Applicant_Name}}</p>
-                    {% comment %} <input type="text" id="applicantsname" placeholder="Enter applicant's name here" name="Applicant_Name" required > {% endcomment %}
-                </li>
-    
-                <li>
-                    <label for="address">Date_Of_Birth</label>
-                    <!-- <textarea id="address" rows="5" rows="9" placeholder="Enter Date Of Birth" required></textarea> -->
-                    {% comment %} <input type="date" name="Date_Of_Birth"> {% endcomment %}
-                </li>
-                <li>
-                    <label for="naddress">Permanent_Address</label>
-                    {% comment %} <textarea id="address" rows="5" rows="9" placeholder="Enter Permanent Address" name="Permanent_Address" required></textarea> {% endcomment %}
-                </li>
-    
-                <li>
-                    <label for="applicantsname">Contact_Number</label>
-                    {% comment %} <input type="number" id="applicantsname" placeholder="Enter Contact Number here" name="Contact_Number" required> {% endcomment %}
-                </li>
-                <li>
-                    <label for="familymembers">Cast_OR_Sub_Cast</label>
-                    {% comment %} <input type="text" id="familymembers" placeholder="Enter your Cast/Sub-Cast here" name="Cast_OR_Sub_Cast" required> {% endcomment %}
-                </li>
-                <li>
-                    <label for="occupation">Occupation_Details</label>
-                    {% comment %} <input type="text" id="occupation" placeholder="Enter occupation here" name="Occupation_Details" required> {% endcomment %}
-                </li>
-                <li>
-                    <label for="income1">Father_Name</label>
-                    {% comment %} <input type="text" id="income1" placeholder="Enter Father's Name here" name="Father_Name" required> {% endcomment %}
-                </li>
-                <li>
-                    <label for="fam_mem2_name">Mother_Name</label>
-                    {% comment %} <input type="text" id="fam_mem2_name" placeholder="Enter Mother's Name here" name="Mother_Name" required> {% endcomment %}
-                </li>
-                <li>
-                    <label for="fam_mem2_name">Spouse_Name</label>
-                    {% comment %} <input type="text" id="fam_mem2_name" placeholder="Enter Spouse Name here" name="Spouse_Name" required> {% endcomment %}
-                </li>
-                <li>
-                    <label for="relation2">Father_Occupation_Details </label>
-                    {% comment %} <input type="text" id="relatio2" placeholder="Enter Father's Occupation here" name="Father_Occupation_Details" required> {% endcomment %}
-                </li>
-                <li>
-                    <label for="rationcardno">Ration_Card_Number</label>
-                    {% comment %} <input type="text" id="aadharcardno" placeholder="Enter ration card number here" name="Ration_Card_Number" required> {% endcomment %}
-                </li>
-                <li>
-                    <label for="rationcardimg">Ration_Card_Image</label>
-                    {% comment %} <input type="file" id="rationcardimg" name="Ration_Card_Image" required> {% endcomment %}
-                </li>
-                <li>
-                    <label for="elec_bill_no">Electricity_Bill_Number</label>
-                    {% comment %} <input type="number" id="elec_bill_no" placeholder="Enter electricity bill number here" name="Electricity_Bill_Number" required> {% endcomment %}
-                </li>
-                <li>
-                    <label for="elec_bill_img">Electricity_Bill_Image</label>
-                    {% comment %} <input type="file" id="rationcardimg" name="Electricity_Bill_Image" required> {% endcomment %}
-                </li>
-                <li>
-                    <label for="elec_bill_img">SEBC_Cast_Certificate_Image</label>
-                    {% comment %} <input type="file" id="rationcardimg" name="SEBC_Cast_Certificate_Image" required> {% endcomment %}
-                </li>
-                <li>
-                    <label for="elec_bill_img">Income_Certificate_Image</label>
-                    {% comment %} <input type="file" id="rationcardimg" name="Income_Certificate_Image" required> {% endcomment %}
-                </li>
-                
-                
-                <!-- <p>Age_2</p> -->
-                <ul class="flex-inner">
-                 
-    
-                </ul>
-               
-                    <!-- <p>Age_3</p> -->
-               
-                <ul class="flex-inner">
-                   
-                </ul>
-                </li>
+<!-- form -->
 
-                <li>
-                    <label for="witness1">Witness1_Full_Name</label>
-                    {% comment %} <input type="text" id="witness1" placeholder="Enter witness1 full name" name="Witness1_Full_Name" required> {% endcomment %}
-    
-                </li>
-                <li>
-                    <!-- <p>Witness_2_Age</p> -->
-                    <label for="occupation">Witness1_Age</label>
-                    {% comment %} <input type="number" id="Age_1" placeholder="Enter witness 1 age here" name="Witness1_Age" required> {% endcomment %}
-                </li>
-                <li>
-                    <label for="witness1occupation">Witness1_Occupation_Details</label>
-                    {% comment %} <input type="text" id="witness1occupation" placeholder="Enter witness1 occupation" name="Witness1_Occupation_Details" required> {% endcomment %}
-    
-                </li>
-                <li>
-                    <label for="witness1address">Witness1_Permanent_Address</label>
-                    {% comment %} <textarea id="address" rows="5" rows="9" placeholder="Enter witness1 address" name="Witness1_Permanent_Address" required></textarea> {% endcomment %}
-                </li>
-                <li>
-                    <label for="w1_aadharcardno">Witness1_Aadhar_Card_Number</label>
-                    {% comment %} <input type="number" id="w1_aadharcardno" placeholder="Enter witness1 aadharcard number here" name="Witness1_Aadhar_Card_Number" required> {% endcomment %}
-                </li>
-    
-                <li>
-                    <label for="w1_aadharcardimg">Witness1_Aadhar_Card_Image</label>
-                    {% comment %} <input type="file" id="aadharcardimg" name="Witness1_Aadhar_Card_Image" required> {% endcomment %}
-                </li>
-    
-                <li>
-                    <label for="w1_sign_img">Witness1_Signature_Image</label>
-                    {% comment %} <input type="file" id="w1_sign_img" name="Witness1_Signature_Image" required> {% endcomment %}
-                </li>
-    
-    
-    
-                <li>
-                    <label for="witness2">Witness2_Full_Name</label>
-                    {% comment %} <input type="text" id="witness2" placeholder="Enter witness2 full name" name="Witness2_Full_Name" required> {% endcomment %}
-    
-                </li>
-                <li>
-                    <!-- <p>Witness_2_Age</p> -->
-                    <label for="occupation">Witness2_Age</label>
-                    {% comment %} <input type="number" id="Age_1" placeholder="Enter witness 2 age here" name="Witness2_Age" required> {% endcomment %}
-                </li>
-    
-                <ul class="flex-inner">
-                   
-                </ul>
-                </li>
-                <li>
-                    <label for="witness2occupation">Witness2_Occupation_Details</label>
-                    {% comment %} <input type="text" id="witness2occupation" placeholder="Enter witness2 occupation " name="Witness2_Occupation_Details" required> {% endcomment %}
-    
-                </li>
-                <li>
-                    <label for="witness2address">Witness2_Permanent_Address</label>
-                    {% comment %} <textarea id="address" rows="5" rows="9" placeholder="Enter witness2 address" name="Witness2_Permanent_Address" required></textarea> {% endcomment %}
-                </li>
-                <li>
-                    <label for="w2_aadharcardno">Witness2_Aadhar_Card_Number</label>
-                    {% comment %} <input type="number" id="w2_aadharcardno" placeholder="Enter witness2 aadharcard number here" name="Witness2_Aadhar_Card_Number" required> {% endcomment %}
-                </li>
-    
-                <li>
-                    <label for="w2_aadharcardimg">Witness2_Aadhar_Card_Image</label>
-                    {% comment %} <input type="file" id="aadharcardimg" name="Witness2_Aadhar_Card_Image" required> {% endcomment %}
-                </li>
-    
-                <li>
-                    <label for="w2_sign_img">Witness2_Signature_Image</label>
-                    {% comment %} <input type="file" id="w2_sign_img" name="Witness2_Signature_Image" required> {% endcomment %}
-                </li>
-    
-                
-                <li>
-                    <label for="app_passport_img">Applicant_Passport_Size_Image</label>
-                    {% comment %} <input type="file" id="app_passport_img" name="Applicant_Passport_Size_Image" required> {% endcomment %}
-                </li>
-                 <li>
-                    <label for="app_sign_img">Applicant_Signature_Image</label>
-                    {% comment %} <input type="file" id="app_sign_img" name="Applicant_Signature_Image" required> {% endcomment %}
-                </li>
-                <li>
-                    <label for="app_date">Date_Of_Application</label>
-                    {% comment %} <input type="date" id="app_date" name="Date_Of_Application" required> {% endcomment %}
-                </li>
-                <!-- <li>
-                    <label for="self_dec_name">Self_Declaration_Full_Name</label>
-                    <input type="text" id="self_dec_name" placeholder="Enter self declaration name here" name="Self_Declaration_Full_Name" required>
-                </li>
-                <li>
-                    <label for="self_dec_address">Self_Declaration_Address</label>
-                    <textarea id="self_dec_address" rows="5" rows="9" placeholder="Enter self declaration address" name="Self_Declaration_Address"
-                        required></textarea> -->
-                <!-- </li> -->
-                <li>
-                    <label for="self_dec_sign_img">Self_Declaration_Image</label>
-                    {% comment %} <input type="file" id="self_dec_sign_img" name="Self_Declaration_Image" required> {% endcomment %}
-                </li>
+<!-- contents -->
+<form>
+  {% if success_message %}
+  <p style="color: black">{{success_message}}</p>
+  {% else %} {{error_message}} {% endif %}
+  <ul class="flex-outer">
+    <!-- <h1 style="color: black;">Income Certificate</h1>-->
 
-               {% if error_message %}
-                <p>{{error_message}}</p>
-                {% else %}
-                {{success_message}}
-               {% endif %}
-            </ul>
-            
-        {% comment %} <button type="submit" class="button1"> Submit </button> {% endcomment %}
-        {% comment %} <button type="reset" class="button2"> Reset </button> {% endcomment %}
-</form>    
+    <li>
+      <label for="applicantsname">Applicant_Name</label>
+      <p>{{income_form.Applicant_Name}}</p>
+    </li>
 
-</body>
-</html>
+    <li>
+      <label for="address">Applicant_Address</label>
+      <p>{{income_form.Applicant_Address}}</p>
+    </li>
+    <li>
+      <label for="naddress">Native_Address</label>
+      <p>{{income_form.Native_Address}}</p>
+    </li>
+
+    <li>
+      <label for="applicantsname">Occupation_Details</label>
+      <p>{{income_form.Occupation_Details}}</p>
+    </li>
+    <li>
+      <label for="familymembers">Total_Family_Members</label>
+      <p>{{income_form.Total_Family_Members}}</p>
+    </li>
+
+    <li>
+      <label for="fam_income">Family_Annual_Income</label>
+      <p>{{income_form.Family_Annual_Income}}</p>
+    </li>
+    <li>
+      <label for="fam_mem_income">No_Of_Family_Members_Earning</label>
+      <p>{{income_form.No_Of_Family_Members_Earning}}</p>
+    </li>
+    <li>
+      <label for="message">Annual_Average_Electricity_Bill</label>
+      <p>{{income_form.Annual_Average_Electricity_Bill}}</p>
+    </li>
+
+    <!--Second form-->
+    <li>
+      <label for="fam_mem1_name">Family_Member1_Name </label>
+      <p>{{income_form.Family_Member1_Name}}</p>
+    </li>
+
+    <li>
+      <label for="relation">Relation_With_Applicant1 </label>
+      <p>{{income_form.Relation_With_Applicant1}}</p>
+    </li>
+    <li>
+      <label for="occupation">Age_1</label>
+      <p>{{income_form.Age_1}}</p>
+    </li>
+
+    <li>
+      <label for="occupation">Occupation_1</label>
+      <p>{{income_form.Occupation_1}}</p>
+    </li>
+    <li>
+      <label for="income1">Annual_Income_1</label>
+      <p>{{income_form.Annual_Income_1}}</p>
+    </li>
+    <li>
+      <label for="fam_mem2_name">Family_Member2_Name </label>
+      <p>{{income_form.Family_Member2_Name}}</p>
+    </li>
+    <li>
+      <label for="relation2">Relation_With_Applicant2 </label>
+      <p>{{income_form.Relation_With_Applicant2}}</p>
+    </li>
+
+    <li></li>
+    <li>
+      <label for="occupation">Age_2</label>
+      <p>{{income_form.Age_2}}</p>
+    </li>
+
+    <li>
+      <label for="occupation">Occupation_2</label>
+      <p>{{income_form.Occupation_2}}</p>
+    </li>
+    <li>
+      <label for="income2">Annual_Income_2</label>
+      <p>{{income_form.Annual_Income_2}}</p>
+    </li>
+    <li>
+      <label for="aadharcardno">Aadhar_Card_Number</label>
+      <p>{{income_form.Aadhar_Card_Number}}</p>
+    </li>
+    <li>
+      <label for="aadharcardimg">Aadhar_Card_Image</label>
+      <p>{{income_form.Aadhar_Card_Image}}</p>
+    </li>
+    <li>
+      <label for="rationcardno">Ration_Card_Number</label>
+      <p>{{income_form.Ration_Card_Number}}</p>
+    </li>
+    <li>
+      <label for="rationcardimg">Ration_Card_Image</label>
+      <p>{{income_form.ApplicantRation_Card_Image_Name}}</p>
+    </li>
+    <li>
+      <label for="elec_bill_no">Electricity_Bill_Number</label>
+      <p>{{income_form.Electricity_Bill_Number}}</p>
+    </li>
+    <li>
+      <label for="elec_bill_img">Electricity_Bill_Image</label>
+      <p>{{income_form.Electricity_Bill_Image}}</p>
+    </li>
+    <li>
+      <label for="elec_card_no">Election_Card_Number</label>
+      <p>{{income_form.Election_Card_Number}}</p>
+    </li>
+    <li>
+      <label for="elec_card_img">Election_Card_Image</label>
+      <p>{{income_form.Election_Card_Image}}</p>
+    </li>
+    <li>
+      <label for="witness1">Witness1_Full_Name</label>
+      <p>{{income_form.Witness1_Full_Name}}</p>
+    </li>
+    <li>
+      <!-- <p>Witness_1_Age</p> -->
+      <label for="occupation">Witness_1_Age</label>
+      <p>{{income_form.Witness_1_Age}}</p>
+    </li>
+
+    <li>
+      <label for="witness1occupation">Witness1_Occupation_Details</label>
+      <p>{{income_form.Witness1_Occupation_Details}}</p>
+    </li>
+    <li>
+      <label for="witness1address">Witness1_Permanent_Address</label>
+      <p>{{income_form.Witness1_Permanent_Address}}</p>
+    </li>
+    <li>
+      <label for="w1_aadharcardno">Witness1_Aadhar_Card_Number</label>
+      <p>{{income_form.Witness1_Aadhar_Card_Number}}</p>
+    </li>
+
+    <li>
+      <label for="w1_aadharcardimg">Witness1_Aadhar_Card_Image</label>
+      <p>{{income_form.Witness1_Aadhar_Card_Image}}</p>
+    </li>
+
+    <li>
+      <label for="w1_sign_img">Witness1_Signature_Image</label>
+      <p>{{income_form.Witness1_Signature_Image}}</p>
+    </li>
+
+    <li>
+      <label for="witness2">Witness2_Full_Name</label>
+      <p>{{income_form.Witness2_Full_Name}}</p>
+    </li>
+    <li>
+      <!-- <p>Witness_2_Age</p> -->
+      <label for="occupation">Witness2_Age</label>
+      <p>{{income_form.Witness2_Age}}</p>
+    </li>
+
+    <li>
+      <label for="witness2occupation">Witness2_Occupation_Details</label>
+      <p>{{income_form.Witness2_Occupation_Details}}</p>
+    </li>
+    <li>
+      <label for="witness2address">Witness2_Permanent_Address</label>
+      <p>{{income_form.Witness2_Permanent_Address}}</p>
+    </li>
+    <li>
+      <label for="w2_aadharcardno">Witness2_Aadhar_Card_Number</label>
+      <p>{{income_form.Witness2_Aadhar_Card_Number}}</p>
+    </li>
+
+    <li>
+      <label for="w2_aadharcardimg">Witness2_Aadhar_Card_Image</label>
+      <p>{{income_form.Witness2_Aadhar_Card_Image}}</p>
+    </li>
+
+    <li>
+      <label for="w2_sign_img">Witness2_Signature_Image</label>
+      <p>{{income_form.Witness2_Signature_Image}}</p>
+    </li>
+
+    <li>
+      <label for="app_sign_img">Applicant_Signature_Image</label>
+      <p>{{income_form.Applicant_Signature_Image}}</p>
+    </li>
+    <li>
+      <label for="app_passport_img">Applicant_Passport_Size_Image</label>
+      <p>{{income_form.Applicant_Passport_Size_Image}}</p>
+    </li>
+    <li>
+      <label for="app_date">Date_Of_Application</label>
+      <p>{{income_form.Date_Of_Application}}</p>
+    </li>
+
+    <li>
+      <label for="self_dec_sign_img">Self_Declaration_Certificate_Image</label>
+      <p>{{income_form.Self_Declaration_Certificate_Image}}</p>
+    </li>
+  </ul>
+
+  <button class="button1">
+    Print Your Fuckin' Application
+  </button>
+  <script>
+    function handlePrint(event) {
+      event.preventDefault();
+      window.print();
+    }
+    const btn = document.querySelector(".button1");
+    btn.addEventListener("click", handlePrint);
+  </script>
+</form>

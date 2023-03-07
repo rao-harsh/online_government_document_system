@@ -1,0 +1,108 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/header.css' %}"/>
+      <!-- Fontawesome CDN Link -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+</head>
+<body>
+     <!--navbar-->
+
+     <div class="page-wrapper">
+        <div class="nav-wrapper">
+            <div class="grad-bar"></div>
+            <nav>
+                <input type="checkbox" id="check">
+                <label for="check" class="checkbtn">
+                    <i class="fas fa-bars"></i>
+                </label>
+                <a href="newindex.html"><img  src="{% static 'images/logo.png' %}"  alt="logo" id="logo-changer" style="margin-top: 0px; margin-left: 0px; border-radius: 8px;"/></a>
+             
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Registered User</a></li>
+                    <li><a href="#">Income Certificates</a></li>
+                    <li><a href="#">Non Creamy Layer Certificate</a></li>
+                </ul>
+            </nav>
+        </div>
+    
+        <!-- login page content  -->
+
+
+        {% block content %}
+        
+        {% endblock content %}
+
+
+
+
+           
+        <!-- footer -->
+
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+
+            <a href="newindex.html"><img  src="{% static 'images/logo.png' %}"  alt="logo" id="logo-changer" style="margin-top: 0px; margin-left: 0px; border-radius: 8px;"/></a> 
+
+            <p class="footer-links">
+                <a href="#">Home</a>
+                <a href="#">Registered User</a>
+                <a href="#">Income Certificates</a>
+                <a href="#">Non Creamy Layer Certificates</a>
+            </p>
+<h3><span>Let's Get Digitally!</span></h3><br/>
+
+
+            <p class="footer-company-name">Online Government Document System © 2023</p>
+        </div>
+
+        <div class="footer-center">
+
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>Ahmedabad</p>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-phone"></i>
+                <p>123456789</p>
+            </div>
+
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:support@company.com">support@company.com</a></p>
+            </div>
+
+        </div>
+
+        <div class="footer-right">
+
+            <p class="footer-company-about">
+               <h2 style="color: lightseagreen;"> About us</h2>
+                <p style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">Our main aim is to create a user-friendly working 
+                    environment which is easy, comfortable and effective service for users
+            </p><br/><br/>
+                        </p>
+
+            <div class="rounded-social-buttons">
+                <a class="social-button facebook" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a class="social-button twitter" href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a class="social-button youtube" href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a class="social-button instagram" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+
+        </div>
+
+    </footer>
+
+    
+</body>
+</html>

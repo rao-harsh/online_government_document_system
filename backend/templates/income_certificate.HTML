@@ -23,7 +23,6 @@
         {% if success_message %}
         <p style="color:black">{{success_message}}</p>
         {% else %}
-        {{form.as_p}}
         {{error_message}}
         {% endif %}
         {% csrf_token %}
@@ -112,25 +111,6 @@
                 <li>
                     <label for="income2">Annual_Income_2</label>
                     <input type="number" id="income1" name="Annual_Income_2" placeholder="Enter annual income2 here" >
-                </li>
-                <li>
-                    <label for="relation2">Relation_With_Applicant3 </label>
-                    <input type="text" id="relatio2" name="Relation_With_Applicant3" placeholder="Enter realtion with applicant2" >
-                </li>
-            <li>
-                <!-- <p>Age_3</p> -->
-                <li>
-                    <label for="occupation">Age_3</label>
-                    <input type="number" id="Age_3" name="Age_3" placeholder="Enter age here" >
-                </li>
-        
-                <li>
-                    <label for="occupation">Occupation_3</label>
-                    <input type="text" id="occupation" name="Occupation_3" placeholder="Enter occupation_1 here" >
-                </li>
-                <li>
-                    <label for="income1">Annual_Income_3</label>
-                    <input type="number" id="income1" name="Annual_Income_3" placeholder="Enter annual income1 here" >
                 </li>
                 <li>
                     <label for="aadharcardno">Aadhar_Card_Number</label>

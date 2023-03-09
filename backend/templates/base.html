@@ -32,6 +32,9 @@
                     {% else %}
                     <li><a class="{% block login_active %}{% endblock login_active %}" href="{% url 'login_view' %}">login</a></li>
                     {% endif %}
+                    {% if user.role == "admin" %}
+                    <li><a class="{% block dashboard_active %}{% endblock dashboard_active %}" href="{% url 'government-officer-panel' %}">Dashboard</a></li>
+                    {% endif %}
                 </ul>
             </nav>
         </div>

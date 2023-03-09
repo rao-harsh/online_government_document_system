@@ -1,7 +1,27 @@
-{% extends 'government-officer-base.html' %}
-
+{% extends 'base.html' %}
+{% load static %}
+{% block css_links %}
+<link rel="stylesheet" href="{% static 'css/header.css' %}" />
+{% endblock css_links %}
+{% block dashboard_active %} 
+    active
+{% endblock dashboard_active %}
 {% block content %}
-<section class="headline">
+    <section class="headline">
     <h1>Welcome to the Government Panel</h1>
-</section>
+    </section>
+    <section class="features">
+    <div class="feature-container">
+        <a href="{% url 'government-officer-get-income-certificates' %}"> <img src="{% static 'images/pic1.png' %}" /></a>
+        <h1 style="color: black">Income Certificate</h1>
+    </div>
+    <div class="feature-container">
+        <a href="{% url 'government-officer-get-users' %}"> <img src="{% static 'images/user.jpg' %}" /></a>
+        <h1 style="color: black">Site Users</h1>
+    </div>
+    <div class="feature-container">
+        <a href="{% url 'government-officer-get-non-creamy-layer-certificates' %}"> <img src="{% static 'images/pic2.jpg' %}" /></a>
+        <h1 style="color: black">Non Creamy Layer Certificate</h1>
+    </div>
+    </section>
 {% endblock content %}

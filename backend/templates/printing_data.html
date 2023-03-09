@@ -228,5 +228,12 @@
     }
     const btn = document.querySelector(".button1");
     btn.addEventListener("click", handlePrint);
+    window.onafterprint = function(){
+      console.log("Print successful")
+    }
+
+    window.onbeforeprint = function(){
+      console.log("Before Print Successful")
+    }
   </script>
 </form>

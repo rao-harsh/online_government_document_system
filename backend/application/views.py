@@ -34,12 +34,11 @@ def login_view(request):
             next_page = form.data["next"]
             
             user = authenticate(username=username,password=password)
-            print(user.role)
             if user is not None:
                 login(request,user)
                 print(request.user.pk)
                 if request.user.role == "admin":
-                    return redirect("government-officer-panel")
+                    return redirect("home")
                 else:
                     if next_page != "None" and next_page != "" and next_page is not None:
                         return redirect(next_page)
@@ -81,11 +80,12 @@ def income_certificate(request):
 def non_creamy_layer(request):
     if request.method == "POST":
         form = NonCreamyLayerForm(request.POST,request.FILES)
-        if form.is_Valid():
+        if form.is_valid():
             form.save()
             return redirect("non-creamy-layer-form/?id={0}".format(request.user.pk))
         else:
             print(form.errors)
+        return render(request,"non_creamy_layer.html",{"error_message":form.errors})
     return render(request,"non_creamy_layer.html")
 
 @login_required
@@ -106,3 +106,20 @@ def government_officer_panel(request):
         return render(request,"government-officer-panel.html")
     else:
         return render(request,"login.html",{"error_message":"You're very chalak bro but i'm your fuckin' daddy sucker"})
+
+@login_required
+def get_income_certificates(request):
+    income_certificates = models.Income.objects.all()
+    print(income_certificates)
+    return render(request,"government-officer-get-income-certificates.html",{"certificates":income_certificates})
+
+@login_required
+def get_non_creamy_layer_certificates(request):
+    ncls = models.Non_Creamy_Layer.objects.all()
+    print(ncls)
+    return render(request,"government-officer-get-non-creamy-layer-certificates.html",{"ncls":ncls})
+
+@login_required
+def get_users(request):
+    users = models.CustomUser.objects.filter(role="user")
+    return render(request,"government-officer-get-users.html",{"users":users})
